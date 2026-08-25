@@ -231,7 +231,7 @@ nav.main-nav a[aria-current="page"] {
 }
 
 .hero-photo {
-  max-width: 380px;
+  max-width: 320px;
   margin: 0 auto 40px;
   border-radius: 28px;
   background: var(--panel);
@@ -489,7 +489,7 @@ footer.site-footer p {
 /* ---------- Split hero (v3) ---------- */
 
 .hero-split {
-  padding: 88px 32px 56px;
+  padding: 40px 32px 36px;
   position: relative;
   overflow: hidden;
 }
@@ -512,8 +512,8 @@ footer.site-footer p {
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: minmax(280px, 400px) 1fr;
-  gap: 64px;
+  grid-template-columns: minmax(260px, 360px) 1fr;
+  gap: 56px;
   align-items: center;
 }
 
@@ -553,10 +553,7 @@ footer.site-footer p {
 .hero-content-col h1 em {
   font-style: normal;
   font-weight: 800;
-  background: linear-gradient(100deg, var(--teal-deep), var(--blue) 55%, var(--green));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: var(--blue);
 }
 
 .hero-content-col .role-strip {
