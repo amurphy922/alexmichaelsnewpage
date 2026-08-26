@@ -434,7 +434,7 @@ nav.main-nav a[aria-current="page"] {
 /* ---------- Footer ---------- */
 
 footer.site-footer {
-  padding: 44px 32px;
+  padding: 28px 32px 36px;
   text-align: center;
 }
 
@@ -942,4 +942,123 @@ footer.site-footer p {
 
 @media (max-width: 640px) {
   .contact-columns { flex-direction: column; align-items: center; gap: 32px; }
+}
+
+/* ---------- Photo gallery (masonry + lightbox) ---------- */
+
+.masonry {
+  column-count: 3;
+  column-gap: 18px;
+}
+
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 18px;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--line);
+  cursor: zoom-in;
+  background: var(--panel);
+}
+
+.masonry-item img {
+  width: 100%;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.masonry-item:hover img {
+  transform: scale(1.03);
+}
+
+.photo-credit {
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  margin-top: 36px;
+  line-height: 1.8;
+}
+
+.photo-credit a {
+  color: var(--teal-deep);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Lightbox */
+
+.lightbox-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 28, 26, 0.92);
+  z-index: 200;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.lightbox-overlay.open {
+  display: flex;
+}
+
+.lightbox-overlay img {
+  max-width: 90vw;
+  max-height: 88vh;
+  border-radius: 8px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next {
+  position: absolute;
+  background: rgba(255,255,255,0.12);
+  border: none;
+  color: #fff;
+  font-family: var(--font-body);
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.lightbox-close:hover,
+.lightbox-prev:hover,
+.lightbox-next:hover {
+  background: rgba(255,255,255,0.25);
+}
+
+.lightbox-close {
+  top: 20px;
+  right: 20px;
+  width: 42px;
+  height: 42px;
+  font-size: 1.3rem;
+}
+
+.lightbox-prev,
+.lightbox-next {
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  font-size: 1.5rem;
+}
+
+.lightbox-prev { left: 16px; }
+.lightbox-next { right: 16px; }
+
+@media (max-width: 860px) {
+  .masonry { column-count: 2; }
+}
+
+@media (max-width: 520px) {
+  .masonry { column-count: 1; }
+  .lightbox-prev, .lightbox-next { width: 40px; height: 40px; font-size: 1.2rem; }
 }

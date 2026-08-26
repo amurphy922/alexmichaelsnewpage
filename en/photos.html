@@ -28,9 +28,73 @@
 
 <section class="section" style="border-bottom:none; padding-top:56px;">
   <div class="wrap">
-    <p class="placeholder-note">Professional headshots and production stills will be embedded here as a gallery.</p>
+    <div class="masonry" id="masonry">
+      <div class="masonry-item"><img src="../assets/img/gallery/headshot-1.jpg" alt="Alex Michaels — headshot" loading="lazy"></div>
+      <div class="masonry-item"><img src="../assets/img/gallery/cruise-2.jpg" alt="Alex Michaels — onboard performance" loading="lazy"></div>
+      <div class="masonry-item"><img src="../assets/img/gallery/headshot-3.jpg" alt="Alex Michaels — headshot" loading="lazy"></div>
+      <div class="masonry-item"><img src="../assets/img/gallery/twelve-tenors.jpg" alt="Alex Michaels — The 12 Tenors" loading="lazy"></div>
+      <div class="masonry-item"><img src="../assets/img/gallery/fitness-1.jpg" alt="Alex Michaels — athletic" loading="lazy"></div>
+      <div class="masonry-item"><img src="../assets/img/gallery/lifestyle-2.jpg" alt="Alex Michaels — lifestyle" loading="lazy"></div>
+      <div class="masonry-item"><img src="../assets/img/gallery/headshot-2.jpg" alt="Alex Michaels — headshot" loading="lazy"></div>
+      <div class="masonry-item"><img src="../assets/img/gallery/cruise-3.jpg" alt="Alex Michaels — ensemble number onboard" loading="lazy"></div>
+      <div class="masonry-item"><img src="../assets/img/gallery/fitness-2.jpg" alt="Alex Michaels — athletic" loading="lazy"></div>
+      <div class="masonry-item"><img src="../assets/img/gallery/headshot-4.jpg" alt="Alex Michaels — headshot" loading="lazy"></div>
+      <div class="masonry-item"><img src="../assets/img/gallery/cruise-1.jpg" alt="Alex Michaels — onboard performance" loading="lazy"></div>
+      <div class="masonry-item"><img src="../assets/img/gallery/lifestyle-1.jpg" alt="Alex Michaels — lifestyle" loading="lazy"></div>
+    </div>
+
+    <p class="photo-credit">
+      Photographers: <a href="https://www.bellasavillephotography.com/" target="_blank" rel="noopener">Bella Saville Photography</a> ·
+      <a href="http://aubreetphotography.com" target="_blank" rel="noopener">Aubree T. Photography</a> ·
+      <a href="https://aida.de/" target="_blank" rel="noopener">AIDA Cruises</a>
+    </p>
   </div>
 </section>
+
+<div class="lightbox-overlay" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+  <button class="lightbox-prev" id="lightboxPrev" aria-label="Previous image">&#8249;</button>
+  <img id="lightboxImg" src="" alt="">
+  <button class="lightbox-next" id="lightboxNext" aria-label="Next image">&#8250;</button>
+</div>
+
+<script>
+(function() {
+  var items = Array.prototype.slice.call(document.querySelectorAll('#masonry img'));
+  var overlay = document.getElementById('lightbox');
+  var lbImg = document.getElementById('lightboxImg');
+  var idx = 0;
+
+  function show(i) {
+    idx = (i + items.length) % items.length;
+    lbImg.src = items[idx].src;
+    lbImg.alt = items[idx].alt;
+  }
+  function open(i) {
+    show(i);
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function close() {
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  items.forEach(function(img, i) {
+    img.parentElement.addEventListener('click', function() { open(i); });
+  });
+  document.getElementById('lightboxClose').addEventListener('click', close);
+  document.getElementById('lightboxPrev').addEventListener('click', function(e) { e.stopPropagation(); show(idx - 1); });
+  document.getElementById('lightboxNext').addEventListener('click', function(e) { e.stopPropagation(); show(idx + 1); });
+  overlay.addEventListener('click', function(e) { if (e.target === overlay) close(); });
+  document.addEventListener('keydown', function(e) {
+    if (!overlay.classList.contains('open')) return;
+    if (e.key === 'Escape') close();
+    if (e.key === 'ArrowLeft') show(idx - 1);
+    if (e.key === 'ArrowRight') show(idx + 1);
+  });
+})();
+</script>
 
 <footer class="site-footer"><div class="wrap"><p>© 2026 Alex Michaels · Hamburg, Germany</p></div></footer>
 
