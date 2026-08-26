@@ -840,3 +840,45 @@ footer.site-footer p {
   .reels-grid { grid-template-columns: 1fr; }
   .clips-grid { grid-template-columns: 1fr; }
 }
+
+/* ---------- Audio page ---------- */
+
+.audio-list {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+}
+
+.audio-item h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin: 0 0 4px;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.audio-item p {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  line-height: 1.5;
+  margin: 0 0 12px;
+}
+
+.audio-embed {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--line);
+}
+
+.audio-embed iframe {
+  display: block;
+  width: 100%;
+}
