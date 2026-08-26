@@ -590,7 +590,7 @@ footer.site-footer p {
 }
 
 .hero-links-row {
-  padding: 8px 32px 64px;
+  padding: 8px 32px 28px;
   position: relative;
   z-index: 1;
 }
@@ -780,6 +780,10 @@ footer.site-footer p {
   font-size: 1.15rem;
   margin: 16px 0 6px;
   color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 
 .reel-item p {
