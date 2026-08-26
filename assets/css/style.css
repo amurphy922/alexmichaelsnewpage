@@ -640,6 +640,9 @@ footer.site-footer p {
 
 .agent-block a {
   color: var(--ink-soft);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
   transition: color 0.2s;
 }
 
