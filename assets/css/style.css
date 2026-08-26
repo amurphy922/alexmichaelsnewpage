@@ -231,7 +231,7 @@ nav.main-nav a[aria-current="page"] {
 }
 
 .hero-photo {
-  max-width: 320px;
+  max-width: 260px;
   margin: 0 auto 20px;
   border-radius: 14px;
   background: var(--panel);
@@ -712,4 +712,33 @@ footer.site-footer p {
 .cv-preview img {
   width: 100%;
   display: block;
+}
+
+/* ---------- CV download link (v2, single link) ---------- */
+
+.cv-download-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--teal-deep);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+  transition: color 0.2s;
+}
+
+.cv-download-link:hover {
+  color: var(--teal);
+}
+
+.cv-download-link .icon {
+  font-size: 1.1rem;
+  text-decoration: none;
+}
+
+.cv-downloads.single {
+  margin-bottom: 28px;
 }
