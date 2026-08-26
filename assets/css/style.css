@@ -232,8 +232,8 @@ nav.main-nav a[aria-current="page"] {
 
 .hero-photo {
   max-width: 320px;
-  margin: 0 auto 40px;
-  border-radius: 28px;
+  margin: 0 auto 20px;
+  border-radius: 14px;
   background: var(--panel);
   box-shadow: var(--shadow);
   aspect-ratio: 3/4;
