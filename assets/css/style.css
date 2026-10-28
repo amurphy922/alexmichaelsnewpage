@@ -589,6 +589,22 @@ footer.site-footer p {
   margin: 0;
 }
 
+.hero-content-col .hero-note {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  max-width: 46ch;
+  margin: 14px 0 0;
+}
+
+.hero-content-col .hero-note a {
+  color: var(--teal-deep);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.hero-content-col .hero-note a:hover { color: var(--teal); }
+
 .hero-links-row {
   padding: 8px 32px 28px;
   position: relative;
@@ -603,6 +619,7 @@ footer.site-footer p {
   .hero-grid { grid-template-columns: 1fr; gap: 36px; text-align: center; }
   .hero-content-col { text-align: center; }
   .hero-content-col .hero-bio { margin: 0 auto; }
+  .hero-content-col .hero-note { margin: 14px auto 0; }
   .hero-content-col .role-strip { text-align: center; }
   .hero-photo-col .hero-photo { max-width: 320px; margin: 0 auto; }
 }
